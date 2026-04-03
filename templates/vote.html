@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vote</title>
+
+<style>
+body{
+    font-family:'Segoe UI';
+    background:#fff4d6;
+    padding:20px;
+}
+.container{
+    max-width:400px;
+    margin:auto;
+}
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeSlide 0.6s ease;
+}
+button{
+    width:100%;
+    padding:10px;
+    background:#f4b400;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+.back{
+    text-align:center;
+    display:block;
+    margin-top:10px;
+}
+
+/* animation */
+@keyframes fadeSlide{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🗳️ Vote for Tomorrow</h2>
+
+{% if msg %}
+<p style="background:#d4edda; padding:10px; text-align:center; border-radius:8px;">
+    {{msg}} ✅
+</p>
+{% endif %}
+
+<div class="card">
+
+<form method="POST" action="/vote">
+
+<input type="hidden" name="student_id" value="{{student_id}}">
+
+<select name="food">
+<option>Idli</option>
+<option>Dosa</option>
+<option>Meals</option>
+</select>
+
+<br><br>
+
+<button type="submit">Submit Vote</button>
+
+</form>
+
+</div>
+
+<a href="/student/{{student_id}}" class="back">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

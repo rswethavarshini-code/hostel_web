@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#d4fc79,#96e6a1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.15);
+    text-align:center;
+    width:350px;
+}
+
+.option{
+    display:block;
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.menu{ background:#34a853; }
+.analytics{ background:#4285f4; }
+.feedback{ background:#fbbc05; }
+.logout{ background:#555; }
+
+.option:hover{
+    opacity:0.85;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>👩‍💼 Admin Dashboard</h2>
+
+<a href="/admin/menu" class="option menu">🍽 Manage Menu</a>
+<a href="/admin/analytics" class="option analytics">📊 View Analytics</a>
+<a href="/admin/feedbacks" class="option feedback">💬 View Feedback</a>
+<a href="/" class="option logout">🚪 Logout</a>
+
+</div>
+
+</body>
+</html>

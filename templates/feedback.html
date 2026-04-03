@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback</title>
+
+<style>
+body{
+    font-family:'Segoe UI';
+    background:#e8f5e9;
+    padding:20px;
+}
+.container{
+    max-width:400px;
+    margin:auto;
+}
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+}
+button{
+    width:100%;
+    padding:10px;
+    background:#34a853;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+textarea,input{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+}
+.back{
+    text-align:center;
+    display:block;
+    margin-top:10px;
+}
+.reply{
+    background:#d4edda;
+    padding:8px;
+    border-radius:8px;
+    margin-top:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>💬 Give Feedback</h2>
+
+{% if msg %}
+<p style="background:#d4edda; padding:10px; text-align:center; border-radius:8px;">
+    {{msg}} ✅
+</p>
+{% endif %}
+
+<!-- FEEDBACK FORM -->
+<div class="card">
+<form method="POST" action="/submit_feedback">
+
+<input type="hidden" name="student_id" value="{{student_id}}">
+
+<textarea name="message" placeholder="Write your feedback" required></textarea>
+
+<input type="number" name="rating" placeholder="Rating (1-5)" required>
+
+<br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+
+<!-- SHOW PREVIOUS FEEDBACK -->
+<h3>Your Feedback History</h3>
+
+{% for f in feedback %}
+<div class="card">
+
+Message: {{f.message}} <br>
+Rating: ⭐ {{f.rating}} <br>
+
+{% if f.reply %}
+<div class="reply">
+<b>Admin Reply:</b> {{f.reply}}
+</div>
+{% else %}
+<i>No reply yet</i>
+{% endif %}
+
+</div>
+{% endfor %}
+
+<a href="/student/{{student_id}}" class="back">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#e0c3fc,#f9f9f9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Container */
+.container{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.15);
+    text-align:center;
+    width:360px;
+}
+
+/* Title */
+h2{
+    margin-bottom:25px;
+}
+
+/* Grid layout */
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+/* Card style */
+.option{
+    padding:20px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    font-size:14px;
+    transition:0.3s;
+}
+
+/* Colors */
+.menu{ background:#6c63ff; }
+.skip{ background:#ff7b7b; }
+.vote{ background:#f4b400; }
+.feedback{ background:#34a853; }
+
+/* Full width logout */
+.logout{
+    margin-top:15px;
+    display:block;
+    background:#555;
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+/* Hover effect */
+.option:hover{
+    transform:scale(1.05);
+    opacity:0.9;
+}
+
+.logout:hover{
+    background:#333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🎓 Student Dashboard</h2>
+
+<div class="options">
+
+<a href="/menu/{{student_id}}" class="option menu">
+📋<br>Today's Menu
+</a>
+
+<a href="/skip/{{student_id}}" class="option skip">
+⏭️<br>Skip Meal
+</a>
+
+<a href="/vote_page/{{student_id}}" class="option vote">
+🗳️<br>Vote Food
+</a>
+
+<a href="/feedback_page/{{student_id}}" class="option feedback">
+💬<br>Feedback
+</a>
+
+</div>
+
+<a href="/" class="logout">🚪 Logout</a>
+
+</div>
+
+</body>
+</html>

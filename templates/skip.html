@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skip Meal</title>
+
+<style>
+body{font-family:'Segoe UI';background:#f3e7ff;padding:20px;}
+.container{max-width:400px;margin:auto;}
+.card{background:white;padding:20px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+button{width:100%;padding:10px;background:#ff7b7b;color:white;border:none;border-radius:8px;}
+.back{text-align:center;display:block;margin-top:10px;}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>⏭️ Skip Meal</h2>
+
+{% if msg %}
+<p style="background:#d4edda; padding:10px; text-align:center; border-radius:8px;">
+    {{msg}} ✅
+</p>
+{% endif %}
+
+<div class="card">
+<form method="POST" action="/skip_meal">
+
+<input type="hidden" name="student_id" value="{{student_id}}">
+
+<select name="meal_type">
+<option>Breakfast</option>
+<option>Lunch</option>
+<option>Dinner</option>
+</select>
+
+<br><br>
+
+<button type="submit">Skip Meal</button>
+
+</form>
+</div>
+
+<a href="/student/{{student_id}}" class="back">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI';
+    background: linear-gradient(135deg,#e0c3fc,#f9f9f9);
+    padding:20px;
+}
+.container{
+    max-width:400px;
+    margin:auto;
+}
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:15px;
+    box-shadow:0px 8px 20px rgba(0,0,0,0.1);
+}
+h2{text-align:center;}
+.back{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#6c63ff;
+    text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🍽️ Today's Menu</h2>
+
+{% for item in menu %}
+<div class="card">
+    <p><b>Date:</b> {{item.date}}</p>
+    <p><b>Meal:</b> {{item.meal_type}}</p>
+    <p><b>Items:</b> {{item.items}}</p>
+</div>
+{% endfor %}
+
+<a href="/student/{{student_id}}" class="back">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

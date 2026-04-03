@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analytics</title>
+</head>
+
+<body>
+
+<h2>📊 Analytics</h2>
+
+<h3>Ratings</h3>
+{% for k,v in rating_data.items() %}
+<p>{{k}} ⭐ : {{v}}</p>
+{% endfor %}
+
+<h3>Votes</h3>
+{% for k,v in vote_data.items() %}
+<p>{{k}} : {{v}}</p>
+{% endfor %}
+
+<h3>Meal Skip</h3>
+{% for k,v in skip_data.items() %}
+<p>{{k}} : {{v}}</p>
+{% endfor %}
+
+<br>
+<a href="/admin">⬅ Back</a>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedbacks</title>
+
+<style>
+body{
+    font-family:'Segoe UI';
+    padding:20px;
+    background:#f0f8ff;
+}
+.card{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+textarea{
+    width:100%;
+    padding:8px;
+    margin-top:10px;
+}
+button{
+    margin-top:10px;
+    padding:8px;
+    background:#34a853;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+.reply{
+    margin-top:10px;
+    background:#e8f5e9;
+    padding:8px;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>💬 Student Feedbacks</h2>
+
+{% for f in feedbacks %}
+<div class="card">
+
+<b>Student {{f.student_id}}</b><br>
+Message: {{f.message}}<br>
+Rating: ⭐ {{f.rating}}
+
+{% if f.reply %}
+<div class="reply">
+<b>Admin Reply:</b> {{f.reply}}
+</div>
+{% else %}
+
+<form method="POST" action="/reply/{{f.id}}">
+<textarea name="reply" placeholder="Write reply..." required></textarea>
+<button type="submit">Send Reply</button>
+</form>
+
+{% endif %}
+
+</div>
+{% endfor %}
+
+<br>
+<a href="/admin">⬅ Back</a>
+
+</body>
+</html>

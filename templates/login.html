@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hostel Meal Management</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial;
+
+    /* 🎨 Mild pastel background */
+    background: linear-gradient(135deg, #e0c3fc, #f9f9f9);
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* 🍽️ Floating icons */
+.icon{
+    position:absolute;
+    width:60px;
+    opacity:0.08;
+    animation: float 7s ease-in-out infinite;
+}
+
+/* Different positions */
+.icon1{ top:10%; left:10%; }
+.icon2{ top:20%; right:15%; animation-delay:1s; }
+.icon3{ bottom:15%; left:20%; animation-delay:2s; }
+.icon4{ bottom:10%; right:10%; animation-delay:3s; }
+.icon5{ top:50%; left:75%; animation-delay:4s; }
+
+/* ✨ Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Login box */
+.login-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    width:350px;
+    text-align:center;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.15);
+    z-index:1;
+}
+
+h2{
+    color:#333;
+    margin-bottom:20px;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    background:#6c63ff;
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5548d9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 🍽️ Floating Icons (slightly increased) -->
+<img src="https://cdn-icons-png.flaticon.com/128/1046/1046784.png" class="icon icon1">
+<img src="https://cdn-icons-png.flaticon.com/128/3075/3075977.png" class="icon icon2">
+<img src="https://cdn-icons-png.flaticon.com/128/2921/2921822.png" class="icon icon3">
+<img src="https://cdn-icons-png.flaticon.com/128/1046/1046857.png" class="icon icon4">
+<img src="https://cdn-icons-png.flaticon.com/128/5787/5787100.png" class="icon icon5">
+
+<div class="login-box">
+
+<h2>🍽️ Hostel Meal Management</h2>
+
+<form method="POST" action="/login">
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

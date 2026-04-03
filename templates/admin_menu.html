@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manage Menu</title>
+</head>
+
+<body>
+
+<h2>🍽 Manage Menu</h2>
+
+<form method="POST" action="/add_menu">
+<input name="meal_type" placeholder="Meal Type" required>
+<input name="items" placeholder="Items" required>
+<button>Add Menu</button>
+</form>
+
+<hr>
+
+<h3>Current Menu</h3>
+
+{% for m in menu %}
+<p>{{m.meal_type}} - {{m.items}} ({{m.date}})</p>
+{% endfor %}
+
+<br>
+<a href="/admin">⬅ Back</a>
+
+</body>
+</html>
